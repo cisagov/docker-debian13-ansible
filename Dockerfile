@@ -28,7 +28,7 @@ RUN apt-get update \
     && apt-get clean
 
 # Allow installing stuff to system Python.
-RUN rm --force /usr/lib/python3.11/EXTERNALLY-MANAGED
+RUN rm --force /usr/lib/python3.12/EXTERNALLY-MANAGED
 
 # Install Ansible via pip.
 RUN pip3 install $pip_packages
