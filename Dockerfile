@@ -27,8 +27,9 @@ RUN apt-get update \
     && rm --force --recursive /usr/share/man \
     && apt-get clean
 
-# Allow installing stuff to system Python.
-RUN rm --force /usr/lib/python3.12/EXTERNALLY-MANAGED
+# Allow installing stuff to system Python. Since Debian Trixie is currently
+# Debian Testing we may have either Python 3.12 or 3.13 so we match for either.
+RUN rm --force /usr/lib/python3.1[23]/EXTERNALLY-MANAGED
 
 # Install Ansible via pip.
 RUN pip3 install $pip_packages
