@@ -4,7 +4,10 @@ updates:
     groups:
       gha-dependencies:
         patterns:
-          - "*"
+          # Covers official GitHub actions
+          - "actions/*"
+          # Covers official Docker actions
+          - "docker/*"
     package-ecosystem: github-actions
     schedule:
       interval: weekly
